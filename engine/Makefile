@@ -8,4 +8,4 @@ all: depend
 
 depend:
 	makedepend -- $(CFLAGS) -- $(ENGINE_SRCS)
-	echo $@ done
+	echo $@ done# DO NOT DELETE
