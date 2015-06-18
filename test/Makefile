@@ -3,8 +3,13 @@ include $(SMOLEK_ROOT)/Makefile.common
 TEST_SRCS=pa_devs.cpp pa_sine.cpp pa_maxsines.cpp
 TEST_OBJS=$(TEST_SRCS:.cpp=.o)
 
-TESTS=pa_devs pa_sine
+TESTS=appTest
+PATESTS=pa_devs pa_sine
 all: depend $(TESTS)
+	for t in $(TESTS); do ./$$t ; done
+	echo $@ done
+
+patests: depend $(PATESTS)
 	for t in $(TESTS); do ./$$t ; done
 	echo $@ done
 
@@ -18,6 +23,9 @@ pa_sine: pa_sine.o
 	$(CC) $^ $(LDFLAGS) -o $@
 
 pa_maxsines: pa_maxsines.o
+	$(CC) $^ $(LDFLAGS) -o $@
+
+appTest: appTest.o
 	$(CC) $^ $(LDFLAGS) -o $@
 
 clean:

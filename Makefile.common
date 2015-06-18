@@ -1,4 +1,4 @@
 CPP_DIRS=$(SMOLEK_ROOT)/engine $(SMOLEK_ROOT)/test
-CXXFLAGS = -std=c++11 -I/usr/local/include
+CXXFLAGS = -std=c++11 -I/usr/local/include -I$(SMOLEK_ROOT)/engine
 LDFLAGS = -lportaudio
 LD=gcc

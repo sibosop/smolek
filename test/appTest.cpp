@@ -1,11 +1,12 @@
 #include "engine.h"
+#include "sineModule.h"
 
 int
-main(int argc, char argv[])
+main(int argc, char *argv[])
 {
   smolek::Engine engine;
   DEBUG(ALWAYS,"smolek main starting");
-  ModulePtr sine(new SineModule);
+  smolek::ModulePtr sine(new smolek::SineModule);
   engine.add(sine);
   engine.maxRunTime(5000);
   engine.run();

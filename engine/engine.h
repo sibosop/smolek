@@ -1,5 +1,6 @@
 #ifndef ENGINE_H
 #define ENGINE_H
+#include "module.h"
 namespace smolek {
 class Engine 
 {
@@ -8,6 +9,7 @@ public:
   ~Engine();
   void run();
   void add(ModulePtr& module);
+  void maxRunTime(int);
 private:
   typedef std::vector<ModulePtr> ModuleList;
   ModuleList moduleList;
@@ -27,7 +29,6 @@ private:
       void *userData );
   void paStreamFinishedMethod();
   static void paStreamFinished(void* userData);
-  typedef std::vector<ModulePtr> ModuleList;
-  ModuleList moduleList;
 };
 }
+#endif

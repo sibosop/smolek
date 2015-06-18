@@ -3,11 +3,12 @@
 #include "shared.h"
 #include "frame.h"
 
+namespace smolek {
 class Module {
 public:
   virtual void getFrame(Frame&) = 0;
 };
 
-typedef std::uniquePtr<Module> ModulePtr;
-
+typedef std::unique_ptr<Module> ModulePtr;
+}
 #endif
